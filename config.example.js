@@ -8,7 +8,7 @@ let config = {};
 config.PROD = false;
 
 config.toInt = 10000;
-config.coin = 'EOS';
+config.coin = 'YAS';
 
 // mongo uri and options
 config.MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/EOSweb';
@@ -42,15 +42,15 @@ config.telegram = {
 
 // reserve nodes
 config.endpoints = [
-      'http://bp.cryptolions.io',
-      'https://eos.greymass.com',
-      'https://public.eosinfra.io', 
-      'http://eosbp-0.atticlab.net'
+      // 'http://bp.cryptolions.io',
+      // 'https://eos.greymass.com',
+      // 'https://public.eosinfra.io',
+      'http://iyas.top:8888'
 ];
 
 // eosjs
 config.eosConfig = {
-  chainId: "aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906",
+  chainId: "ed8636abfe625d99fc9a759d49a016fd8dcae9193676a020aae2540c9fffe32f",
   keyProvider: "",
   httpEndpoint: config.endpoints[0],
   expireInSeconds: 60,
@@ -63,21 +63,21 @@ config.eosConfig = {
 };
 
 // api url for producers list
-config.customChain = 'https://nodes.get-scatter.com';
+config.customChain = 'http://iyas.top:8888';
 
 // api url for history
-config.historyChain = 'https://eos.greymass.com';
+config.historyChain = 'http://198.74.53.102:8888';
 
 // tokens api
-config.tokensAPI = 'http://api.light.xeos.me/api/account/eos/';
+config.tokensAPI = 'http://198.74.53.102:8888/api/account/eos/';
 
 config.apiV = 'v1'; // api version
 config.RAM_UPDATE = 5 * 60 * 1000; // time for ram update - /api/api.*.socket
-config.HISTORY_UPDATE = 5 * 60 * 1000; // time for stats update - /api/api.*.socket 
+config.HISTORY_UPDATE = 5 * 60 * 1000; // time for stats update - /api/api.*.socket
 config.MAX_BUFFER = 500000; // max buffer size for child processes (kb) - /crons
 config.blockUpdateTime = 900; // mainpage upades frequency  - /api/api.*.socket in ml sec
 config.offsetElementsOnMainpage = 10; // blocks on mainpage
-config.limitAsync = 30; // max threads for async.js module  
+config.limitAsync = 30; // max threads for async.js module
 config.updateTPS = 1000;
 
 // slack notifications
